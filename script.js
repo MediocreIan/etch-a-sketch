@@ -13,7 +13,7 @@ function makeCell(typeOfGrid){
 		cell.style.backgroundColor = 'black';
 		typeOfGrid(cell);
 
- 		cell.addEventListener("mouseover", darken);
+ 		cell.addEventListener("mouseenter", darken(cell));
 		wrapper.appendChild(cell)
 		
 	}
@@ -34,8 +34,8 @@ function gradientGrid(cell){
 
  }
 
-function darken(){
-	if (this.style.opacity < 1) {
-		this.style.opacity = parseFloat(this.style.opacity + .01) //got it to call on mouse over but isnt changing the opacity
+function darken(cell){
+	if (cell.style.opacity < 1) {
+		cell.style.opacity = parseFloat(cell.style.opacity + .01) //got it to call on mouse over but isnt changing the opacity
 	}
 }
