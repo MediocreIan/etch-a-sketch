@@ -5,6 +5,23 @@
 	background-color: grey;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	margin: auto;
+}  /*necessary for the working of makeCell() function. if the dimensions change corresponding numbers in lines 8 and 9 of script.js should alsobe changed to match*/
+body {
+	background-color: #cfcfe8;
 }
-
+h1 {
+	text-align: center;
+	font-family: 'Gaegu', cursive;
+	font-size: 48px;
+	text-shadow: 3px 3px #b5b1b1;
+	color: #607e8c;
+	margin: 0;
+	padding-bottom: 5px;
+	height: auto;
+}
+#info {
+	font-size: 10px;
+}
 .cells
+

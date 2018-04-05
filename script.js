@@ -4,13 +4,10 @@ function makeCell(typeOfGrid) {
     let sizeInput = document.getElementById('userInput').value
     for (var i = 0; i < sizeInput * sizeInput; i++) {
         document.getElementById('wrapper'); //identifies parent div. div is made a flexbox by css rules
-        let cellHeight = (1 / sizeInput * 600) - 2 + 'px';
-        let cellWidth = (1 / sizeInput * 700) - 2 + 'px'; // makes the size of cells proportional to wrapper size - margin
-        let cell = document.createElement('div'); //the information for creating individual cells, sould be made its own function
+        let cell = document.createElement('div');
+        cell.style.height = (1 / sizeInput * 600) + 'px';
+        cell.style.width = (1 / sizeInput * 700) + 'px'; // makes the size of cells proportional to wrapper size - margin
         cell.className = 'cells'
-        cell.style.width = cellWidth;
-        cell.style.height = cellHeight;
-        cell.style.margin = '1px'
         cell.style.backgroundColor = 'black';
         window[typeOfGrid](cell);;
         wrapper.appendChild(cell)
@@ -38,7 +35,7 @@ function gradientGrid(cell) {
 }
 
 function colorGrid(cell) {
-    cell.style.backgroundColor = getRandomColor();
+    cell.style.backgroundColor = 'white';
     cell.addEventListener('mouseover', function() {
         cell.style.backgroundColor = getRandomColor()
     })

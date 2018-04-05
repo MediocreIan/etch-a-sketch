@@ -4,34 +4,44 @@
         <title>
             Etch-a-Sketch
         </title>
-        <link href="styles.css" rel="stylesheet" type="text/css">
-        </link>
+        <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"/>
+        <link href="styles.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Gaegu" rel="stylesheet"/>
     </head>
     <body>
+        <div class="w3-sidebar w3-bar-block w3-blue-grey" style="width:15%; z-index:-0.5">
+            <p class="w3-bar-item">
+                how many cells would you like per row?
+                <input class="w3-bar-item w3-button w3-blue-grey" id="userInput" name="how many cells" type="number" value="15"/>
+            </p>
+            <input class="w3-bar-item w3-button" id="reset" name="reset" onclick="reset()" type="submit" value="Apply Changes">
+            </input>
+            <select class="w3-bar-item w3-button" id="gridTypes">
+                <option value="gradientGrid">
+                    Gradient
+                </option>
+                <option value="alternatingGrid">
+                    Black and White Alternating
+                </option>
+                <option value="colorGrid">
+                    Random Colors
+                </option>
+                <option value="simpleGrid">
+                    Black and White
+                </option>
+            </select>
+        </div>
+        <div class="w3-sidebar w3-bar-block w3-blue-grey" style="width:15%;right:0;z-index:-0.5"">
+        	<p class="w3-bar-item">Instructions: Select the type of etch-a-sketch you'd like,and how many pixels you'd like it to be then click Apply Changes. When you hover over a pixel it will Change</p>
+        	<p class="w3-bar-item" id="info">Made by Ian Drews 2018</p>
+        	<p class="w3-bar-item" id="info">Made using W3CSS stylsheet</p>
+        </div>
+        <h1>
+            Etch-A-Sketchier!
+        </h1>
         <div id="wrapper">
         </div>
-        <input id="userInput" name="how many cells" type="number" value="15"/>
-        <input id="reset" name="reset" type="submit" onclick="reset()">
-        <select id="gridTypes">
-            <option value="gradientGrid">
-                Gradient
-            </option>
-            <option value="alternatingGrid">
-                Black and White Alternating
-            </option>
-            <option value="colorGrid">
-                Random Colors
-            </option>
-            <option value="simpleGrid">
-                Black and White
-            </option>
-        </select>
-        <p>
-            how many cells would you like per row?
-            <p>
-                <script src="script.js" type="text/javascript">
-                </script>
-            </p>
-        </p>
+        <script src="script.js" type="text/javascript">
+        </script>
     </body>
 </html>
