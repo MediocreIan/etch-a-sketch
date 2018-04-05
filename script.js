@@ -12,7 +12,7 @@ function makeCell(typeOfGrid) {
         cell.style.height = cellHeight;
         cell.style.margin = '1px'
         cell.style.backgroundColor = 'black';
-        typeOfGrid(cell);
+        window[typeOfGrid](cell);;
         wrapper.appendChild(cell)
     }
 }
@@ -24,7 +24,8 @@ function clearCells() {
     }
 }
 
-function reset(typeOfGrid) {
+function reset() {
+	let typeOfGrid = document.getElementById('gridTypes').value;
     clearCells()
     makeCell(typeOfGrid)
 }
@@ -39,18 +40,36 @@ function gradientGrid(cell) {
 function colorGrid(cell) {
     cell.style.backgroundColor = getRandomColor();
     cell.addEventListener('mouseover', function() {
-    	cell.style.backgroundColor = getRandomColor()
+        cell.style.backgroundColor = getRandomColor()
     })
 }
 
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
     }
+    return color;
+}
+
+function simpleGrid(cell) {
+    cell.style.backgroundColor = 'white';
+    cell.addEventListener('mouseover', function() {
+        cell.style.backgroundColor = 'black'
+    })
+}
+
+function alternatingGrid(cell) {
+    cell.style.backgroundColor = 'white'
+    cell.addEventListener('mouseover', function() {
+        if (cell.style.backgroundColor == 'white') {
+            cell.style.backgroundColor = 'black'
+        } else {
+            cell.style.backgroundColor = 'white'
+        }
+    })
+}
 
 function darken(cell) {
     if (cell.style.opacity < 1) {
